@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konfirmasi Pemesanan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <h1>Pemesanan Berhasil!</h1>
+        <p>Nomor referensi pemesanan Anda:</p>
+        <p class="booking-reference-number">{{ booking_ref }}</p>
+        <a href="/login" id="history-menu-link">Riwayat Pesanan</a>
+    </main>
+</body>
+</html>

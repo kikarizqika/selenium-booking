@@ -1,0 +1,4 @@
+location,checkin,checkout,expected_result
+Jakarta,2026-07-15,2026-07-17,found
+Bandung,2026-08-01,2026-08-03,found
+Surabaya,2026-08-01,2026-08-03,not_found

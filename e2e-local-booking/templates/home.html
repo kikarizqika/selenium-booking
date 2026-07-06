@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BookNow Demo - Cari Hotel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="nav-tab active" id="hotel-tab">Hotel</span>
+    </nav>
+    <main>
+        <h1>Cari Hotel Impianmu</h1>
+        <form action="/search" method="POST" id="search-form">
+            <label for="hotel-search-box">Lokasi</label>
+            <input type="text" id="hotel-search-box" name="location" placeholder="Contoh: Jakarta">
+
+            <label for="checkin">Check-in</label>
+            <input type="date" id="checkin" name="checkin">
+
+            <label for="checkout">Check-out</label>
+            <input type="date" id="checkout" name="checkout">
+
+            <button type="submit" id="search-btn">Cari</button>
+        </form>
+        {% if error %}
+        <p class="search-error-message">{{ error }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>

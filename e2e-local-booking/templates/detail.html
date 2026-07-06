@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ hotel.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <h1>{{ hotel.name }}</h1>
+        <p>{{ hotel.location }}</p>
+
+        <form action="/select-room" method="POST" id="room-form">
+            {% for room in hotel.rooms %}
+            <label class="room-option-card">
+                <input type="radio" name="room_type" value="{{ room }}" required>
+                {{ room }}
+            </label>
+            {% endfor %}
+            <button type="submit" id="continue-btn">Lanjutkan</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Tamu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <h1>Isi Data Tamu</h1>
+        <form action="/booking-form" method="POST" id="guest-form">
+            <label for="guest-name">Nama</label>
+            <input type="text" id="guest-name" name="guest_name" value="{{ name or '' }}">
+
+            <label for="guest-email">Email</label>
+            <input type="text" id="guest-email" name="guest_email" value="{{ email or '' }}">
+            {% if email_error %}
+            <p class="email-error-text">Format email tidak valid</p>
+            {% endif %}
+
+            <button type="submit" id="next-btn">Lanjut</button>
+        </form>
+    </main>
+</body>
+</html>
