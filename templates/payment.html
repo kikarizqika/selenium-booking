@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showCardForm() {
+            document.getElementById('card-form-section').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Pilih Metode Pembayaran</h1>
+        <div class="credit-card-option" id="credit-card-option" onclick="showCardForm()">
+            Kartu Kredit
+        </div>
+
+        <div id="card-form-section" style="display:none;">
+            <form action="/payment" method="POST" id="payment-form">
+                <label for="card-number">Nomor Kartu</label>
+                <input type="text" id="card-number" name="card_number" placeholder="4111 1111 1111 1111">
+
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" name="cvv" placeholder="123">
+
+                <button type="submit" id="pay-btn">Bayar Sekarang</button>
+            </form>
+        </div>
+        {% if payment_error %}
+        <p class="payment-error-message">Pembayaran gagal</p>
+        {% endif %}
+    </main>
+</body>
+</html>

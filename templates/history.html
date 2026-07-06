@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Pesanan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <h1>Riwayat Pesanan</h1>
+        {% if orders %}
+            {% for order in orders %}
+            <div class="history-item-card">
+                <p>Ref: {{ order.ref }}</p>
+                <p>Tamu: {{ order.guest_name }}</p>
+                <p>Tipe Kamar: {{ order.room_type }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Belum ada pesanan.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
