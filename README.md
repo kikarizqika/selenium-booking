@@ -1,4 +1,4 @@
-# BookNow Demo — E2E Testing dengan Selenium & Allure
+# BookNow Demo E2E Testing dengan Selenium & Allure
 
 Proyek ini berisi dua bagian:
 1. **`app.py`** — sistem reservasi hotel lokal (mock booking system) yang berjalan
